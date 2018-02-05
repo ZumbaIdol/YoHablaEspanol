@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace YoHablaEspanol.Data.Migrations
+/*namespace OxfDictionary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
@@ -213,4 +213,4 @@ namespace YoHablaEspanol.Data.Migrations
                 });
         }
     }
-}
+}*/

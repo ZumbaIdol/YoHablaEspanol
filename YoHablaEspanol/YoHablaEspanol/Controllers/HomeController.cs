@@ -17,14 +17,14 @@ namespace YoHablaEspanol.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Description";
+            ViewData["Message"] = "";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Contact";
+            ViewData["Message"] = "";
 
             return View();
         }

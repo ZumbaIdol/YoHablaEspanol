@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -38,11 +39,9 @@ namespace YoHablaEspanol.Controllers
                     string theJson = sr.ReadToEnd();
                     var jsonObject = JsonConvert.DeserializeObject(theJson);
                 }
-
+                
             }
-
         }
-    }
-        
+    }  
 }
     

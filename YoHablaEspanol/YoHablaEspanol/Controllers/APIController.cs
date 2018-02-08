@@ -13,7 +13,6 @@ namespace YoHablaEspanol.Controllers
         public IActionResult Index { get => index; set => index = value; }
     }
 
-
     namespace OxfDictionary
     {
         class Program
@@ -39,7 +38,6 @@ namespace YoHablaEspanol.Controllers
                     string theJson = sr.ReadToEnd();
                     var jsonObject = JsonConvert.DeserializeObject(theJson);
                 }
-                
             }
         }
     }  

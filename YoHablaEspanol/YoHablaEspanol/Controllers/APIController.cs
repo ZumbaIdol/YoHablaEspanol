@@ -16,7 +16,7 @@ namespace YoHablaEspanol.Controllers
 
             string PrimeUrl = "https://od-api.oxforddictionaries.com/api/v1";
             string word = "test";
-            string endPoint = string.Format("/entries/en/{0}/translations=es", word);
+            string endPoint = string.Format("/entries/es/{0}/translations=en", word);
             req = (HttpWebRequest)HttpWebRequest.Create(string.Format("{0}{1}", PrimeUrl, endPoint));
 
             //These are not network credentials, just custom headers

@@ -15,7 +15,7 @@ namespace YoHablaEspanol.Controllers
         {
             //Pick a word from the database
 
-            //Put that one the page somewhere
+            //Put that on the page somewhere
 
             //New view model here
             return View();

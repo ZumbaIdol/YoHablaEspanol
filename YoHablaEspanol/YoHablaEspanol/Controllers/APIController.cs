@@ -4,6 +4,8 @@ using System;
 using System.IO;
 using System.Net;
 using System.Text;
+using YoHablaEspanol.Models;
+using YoHablaEspanol.Services;
 
 namespace YoHablaEspanol.Controllers
 {
@@ -11,29 +13,25 @@ namespace YoHablaEspanol.Controllers
     {
         public IActionResult Index()
         {
+            //Pick a word from the database
 
-            HttpWebRequest req = null;
+            //Put that one the page somewhere
 
-            string PrimeUrl = "https://od-api.oxforddictionaries.com/api/v1";
-            string word = "test";
-            string endPoint = string.Format("/entries/es/{0}/translations=en", word);
-            req = (HttpWebRequest)HttpWebRequest.Create(string.Format("{0}{1}", PrimeUrl, endPoint));
+            //New view model here
+            return View();
+        }
 
-            //These are not network credentials, just custom headers
-            req.Headers.Add("app_id", "e6ecf63a");
-            req.Headers.Add("app_key", "9ac2d4671bbbee67be05202d3d0d3aae");
+        [HttpPost]
+        public IActionResult Index(string translation, string pretranslation)
+        {
+            var translationService = new TranslationService();
+            var translatedWord = translationService.TranslateFromSpanishToEnglish(translation);
 
-            req.Method = WebRequestMethods.Http.Get;
-            req.Accept = "application/json";
+            //Check if their translation is equals translated word from the API
 
-            using (HttpWebResponse HWR_Response = (HttpWebResponse)req.GetResponse())
-            using (Stream respStream = HWR_Response.GetResponseStream())
-            using (StreamReader sr = new StreamReader(respStream, Encoding.UTF8))
-            {
-                string theJson = sr.ReadToEnd();
-                var jsonObject = JsonConvert.DeserializeObject(theJson);
-            }
+            //New model
 
+            //Pass that to the view with the resultz
             return View();
         }
     }

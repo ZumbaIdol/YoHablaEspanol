@@ -31,7 +31,7 @@ namespace YoHablaEspanol.Controllers
 
             //New model
 
-            //Pass that to the view with the resultz
+            //Pass that to the view with the results
             return View();
         }
     }

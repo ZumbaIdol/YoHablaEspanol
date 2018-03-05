@@ -13,18 +13,17 @@ namespace YoHablaEspanol.Controllers
 {
     public class APIController : Controller
     {
+        
         public IActionResult Index()
         {
             //Pick a word from the database
-
             IDictionary<string, string> dict = new Dictionary<string, string>();
             dict.Add(new KeyValuePair<string, string>("feliz", "happy"));
-            dict.Add(new KeyValuePair<string, string>("cambiar", "change"));
             dict.Add(new KeyValuePair<string, string>("corre", "run"));
-            dict.Add(new KeyValuePair<string, string>("inmediatamente", "immediately"));
-            dict.Add(new KeyValuePair<string, string>("rojo", "red"));
+            dict.Add(new KeyValuePair<string, string>("absolutamente", "absolutely"));
+            dict.Add(new KeyValuePair<string, string>("azul", "blue"));
+            dict.Add(new KeyValuePair<string, string>("hombre", "man"));
 
-            //Put that on the page somewhere
             IEnumerable<TValue> RandomValues<TKey, TValue>(IDictionary<TKey, TValue> dictionary)
             {
                 Random rand = new Random();
@@ -32,22 +31,15 @@ namespace YoHablaEspanol.Controllers
                 int size = dictionary.Count;
                 while (true)
                 {
-                    yield return values[rand.Next(size)];
+                    yield return dictionary.ElementAt(rand.Next(0, dictionary.Count)).Value;
                 }
             }
 
-            Dictionary<string, object> getDict = GetDictionary();
-            foreach (object value in RandomValues(dict).Take(5))
-            {
+            { 
+                //New view model here
                 return View();
             }
-
-            //New view model here
-            return View();
         }
-
-        private Dictionary<string, object> GetDictionary() => throw new NotImplementedException();
-
         [HttpPost]
         public IActionResult Index(string translation, string pretranslation)
         {

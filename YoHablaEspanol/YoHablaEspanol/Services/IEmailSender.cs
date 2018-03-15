@@ -13,10 +13,10 @@ namespace YoHablaEspanol.Services
     internal class YoHablaEspanol
     {
 
-       /* private static void Main()
+        private static void Main()
         {
             Execute().Wait();
-        }*/
+        }
 
         static async Task Execute()
         {

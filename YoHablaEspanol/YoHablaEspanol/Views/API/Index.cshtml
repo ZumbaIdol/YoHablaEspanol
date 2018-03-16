@@ -3,10 +3,20 @@
 @{
 
 }
+<script>
+  $(document).ready(function() {
+    $("button").addClass("shake");
+  });
+</script>
+
+<body style="background-color:#E6E6FA">
+</body>
+
+<div class="container-fluid"></div>
     <h1 class="text-center">Yo Habla Español</h1><br/><br/>
 
     <form method="post" action="/api" class="text-center">
     <input name="translation" type="text" placeholder="Enter translation" class="text-center"/><br/><br/>
     <input name="pretranslation" type="hidden" value=""/><br/><br/>
-    <button class="btn btn-block btn-primary"><i class="fa fa-paper-plane"></i>Submit</button>
+    <button class="btn btn-primary"><i class="fa fa-paper-plane"></i>Submit</button>
     </form>

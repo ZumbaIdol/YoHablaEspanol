@@ -1,11 +1,18 @@
 ﻿<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
 @{
 
 }
+
+<head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
 <script>
-  $(document).ready(function() {
-    $("button").addClass("shake");
+    $(document).ready(function () {
+        $("button").addClass("animated shake");
   });
 </script>
 
@@ -18,5 +25,5 @@
     <form method="post" action="/api" class="text-center">
     <input name="translation" type="text" placeholder="Enter translation" class="text-center"/><br/><br/>
     <input name="pretranslation" type="hidden" value=""/><br/><br/>
-    <button class="btn btn-primary"><i class="fa fa-paper-plane"></i>Submit</button>
+    <button class="btn btn-primary animated shake"><i class="fa fa-paper-plane"></i>Submit</button>
     </form>
